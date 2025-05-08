@@ -184,7 +184,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>
             `;
-            element.classList.add('menu__item');
+
             this.parent.append(element);
         }
     }
