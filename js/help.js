@@ -11,8 +11,6 @@ window.addEventListener('DOMContentLoaded', () => {
             if (parseInt(window.getComputedStyle(item).height) > maxHeight) {
                 maxHeight = parseInt(window.getComputedStyle(item).height);
             }
-
-            console.log(window.getComputedStyle(item).height);
         });
 
         blocks.forEach(block => {
@@ -21,9 +19,5 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     alignBlocksHeight('.menu__item');
-
-
-
-
 });
 

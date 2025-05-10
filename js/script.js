@@ -174,7 +174,7 @@ window.addEventListener('DOMContentLoaded', () => {
             const element = document.createElement('div');
             element.innerHTML = `
                 <div class="menu__item">
-                    <img src=${this.src} alt="vegy">
+                    <img src=${this.src} alt=${this.alt}>
                     <h3 class="menu__item-subtitle">${this.title}</h3>
                     <div class="menu__item-descr">${this.description}</div>
                     <div class="menu__item-divider"></div>
@@ -220,4 +220,48 @@ window.addEventListener('DOMContentLoaded', () => {
         '.menu .container',
     ).render();
 
+    //  Forms
+
+    const forms = document.querySelectorAll('form');
+    const message = {
+        loading: 'Loading...',
+        success: 'Thanks. We will contact with you soon!',
+        failure: 'Something went wrong.'
+    };
+
+    forms.forEach(form => {
+        postData(form);
+    });
+
+    function postData(form) {
+        form.addEventListener('submit', (evt) => {
+            evt.preventDefault();
+
+            const statusMessage = document.createElement('div');
+            statusMessage.classList.add('status');
+            statusMessage.textContent = message.loading;
+            form.append(statusMessage);
+
+            const request = new XMLHttpRequest();
+            request.open('POST', 'server.php');
+
+            // request.setRequestHeader('Content-type', 'multipart/form-data');
+
+            const formData = new FormData(form);
+            request.send(formData);
+
+            request.addEventListener('load', () => {
+                if (request.status === 200) {
+                    console.log(request.response);
+                    statusMessage.textContent = message.success;
+                    form.reset();
+                    setTimeout(() => {
+                        statusMessage.remove();
+                    }, 2000);
+                } else {
+                    statusMessage.textContent = message.failure;
+                }
+            })
+        });
+    }
 });
