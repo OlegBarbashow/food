@@ -254,8 +254,8 @@ window.addEventListener('DOMContentLoaded', () => {
                 headers: {
                     'Content-type' : 'application/json',
                 }
-            }).then(data => data.text())
-                .then((data) => {
+            }).then(data => data.text()
+            ).then((data) => {
                 console.log(data);
                 showThanksModal(message.success);
                 statusMessage.remove();
