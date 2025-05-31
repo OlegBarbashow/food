@@ -1,3 +1,6 @@
+import {getData} from "../services/services";
+import {alignBlocksHeight} from "../help/help";
+
 function cards() {
     class MenuCard {
         constructor(src, alt, title, description, price, parentSelector) {
@@ -34,21 +37,14 @@ function cards() {
         }
     }
 
-    const getData = async (url) => {
-        const res = await fetch(url);
-
-        if (!res.ok) {
-            throw new Error(`Could not get ${url} page, status: ${res.status}`);
-        }
-        return await res.json();
-    }
-
     getData('http://localhost:3000/menu')
         .then(data => {
             data.forEach(({img, altimg, title, descr, price}) => {
                 new MenuCard(img, altimg, title, descr, price, '.menu .container').render();
             });
+
+            alignBlocksHeight('.menu__item');
         });
 }
 
-module.exports = cards;
+export default cards;

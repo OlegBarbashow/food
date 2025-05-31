@@ -151,8 +151,11 @@
                     Ваша конституция
                 </div>
                 <div class="calculating__choose calculating__choose_medium">
+                    <label class="visually-hidden" for="height">Введите рост(см):</label>
                     <input type="text" id="height" placeholder="Введите рост(см)" class="calculating__choose-item">
+                    <label class="visually-hidden" for="weight">Введите вес(кг):</label>
                     <input type="text" id="weight" placeholder="Введите вес(кг)"  class="calculating__choose-item">
+                    <label class="visually-hidden" for="age">Введите возраст:</label>
                     <input type="text" id="age" placeholder="Введите возраст" class="calculating__choose-item">
                 </div>
 
@@ -196,8 +199,10 @@
         <div class="container">
             <div class="title">Заказывай пробный день прямо сейчас!</div>
             <form action="#" class="order__form">
-                <input required placeholder="Ваше имя" name="name" type="text" class="order__input">
-                <input required placeholder="Ваш номер телефона" name="phone" type="phone" class="order__input">
+                <label class="visually-hidden" for="name">Ваше имя:</label>
+                <input id="name" required placeholder="Ваше имя" name="name" type="text" class="order__input">
+                <label class="visually-hidden" for="phone">Ваш номер телефона:</label>
+                <input id="phone" required placeholder="Ваш номер телефона" name="phone" type="tel" class="order__input">
                 <img src="icons/right.svg" alt="right">
                 <button class="btn btn_dark btn_min">Перезвонить мне</button>
             </form>
@@ -266,14 +271,15 @@
                 <form action="#">
                     <div data-close class="modal__close">&times;</div>
                     <div class="modal__title">Мы свяжемся с вами как можно быстрее!</div>
-                    <input required placeholder="Ваше имя" name="name" type="text" class="modal__input">
-                    <input required placeholder="Ваш номер телефона" name="phone" type="phone" class="modal__input">
+                    <label class="visually-hidden" for="modal-name">Ваше имя: </label>
+                    <input id="modal-name" required placeholder="Ваше имя" name="name" type="text" class="modal__input">
+                    <label class="visually-hidden" for="modal-tel">Ваш номер телефона</label>
+                    <input id="modal-tel" required placeholder="Ваш номер телефона" name="phone" type="tel" class="modal__input">
                     <button class="btn btn_dark btn_min">Перезвонить мне</button>
                 </form>
             </div>
         </div>
     </div>
     <script src="js/bundle.js"></script>
-    <script src="js/help.js"></script>
 </body>
 </html>
