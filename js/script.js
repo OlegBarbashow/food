@@ -26,6 +26,6 @@ window.addEventListener('DOMContentLoaded', () => {
         slidesFieldSelector: '.offer__slider-inner',
     });
     tabs('.tabheader__item', '.tabheader__items', '.tabcontent',
-        '.tabheader__item_active');
+        'tabheader__item_active');
     timer('.timer', '2025-06-29');
 });

@@ -16,7 +16,15 @@
   },
   "homepage": "https://github.com/OlegBarbashow/food#readme",
   "description": "",
+  "browserslist": [
+    "> 1%"
+  ],
   "devDependencies": {
+    "@babel/cli": "^7.27.2",
+    "@babel/core": "^7.27.4",
+    "@babel/preset-env": "^7.27.2",
+    "babel-loader": "^10.0.0",
+    "core-js": "^3.42.0",
     "json-server": "^1.0.0-beta.3",
     "webpack": "^5.99.9",
     "webpack-cli": "^6.0.1"
